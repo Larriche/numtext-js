@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Numtext</title>
+    <meta charset="utf-8">
+    <style>
+      input[type="text"]{
+      	width: 600px;
+      }
+    </style>
+  </head>
+</html>
+<body>
+
+<p>
+  <label>Original: </label>
+  <input type="text" id="input">
+</p>
+
+<p>
+  <button id="compute">Convert</button><br />
+</p>
+
+<p>
+  <label>Converted: </label>
+  <input type="text" id="output" disabled="1">
+</p>
+<script src="numtext.js"></script>
+
+<script>
+  var converter = new Numtext();
+
+  var submitBttn = document.getElementById("compute");
+
+  submitBttn.addEventListener('click',convert)
+
+  function convert()
+  {
+  	var input = document.getElementById('input');
+
+  	var output = document.getElementById('output');
+  	output.value = converter.convert(input.value);
+
+  	return false;
+  }
+</script>
+</body>
+</html>
